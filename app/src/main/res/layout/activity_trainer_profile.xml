@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Отображение имени тренера -->
+        <TextView
+            android:id="@+id/trainerNameTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Trainer Name"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:paddingTop="16dp" />
+
+        <!-- Описание тренера -->
+        <TextView
+            android:id="@+id/trainerDescriptionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Trainer description"
+            android:textAlignment="center"
+            android:paddingTop="8dp" />
+
+        <!-- Кнопка подписки -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/subscribeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Subscribe"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Список тренировок тренера -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Trainings:"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:paddingTop="24dp"
+            android:paddingBottom="8dp" />
+
+        <LinearLayout
+            android:id="@+id/trainingsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!-- Здесь динамически добавляются TextView-тренировки из кода -->
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
+

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "846212920352",
+    "project_id": "gymlove-4fc37",
+    "storage_bucket": "gymlove-4fc37.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:846212920352:android:c0772c3a3d7e8dabd87845",
+        "android_client_info": {
+          "package_name": "com.example.gymlove"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABzexaLJsuyf-BvCyf210W2kl3bWTe86w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/profileRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back3"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Аватар пользователя -->
+        <ImageView
+            android:id="@+id/avatarImageView2"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:src="@drawable/profile"
+            android:contentDescription="User avatar" />
+
+        <!-- Имя пользователя (только чтение) -->
+        <TextView
+            android:id="@+id/userNameTextView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="User name"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:paddingTop="16dp" />
+
+        <!-- Описание пользователя (только чтение) -->
+        <TextView
+            android:id="@+id/userDescriptionTextView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="User description"
+            android:textAlignment="center"
+            android:paddingTop="8dp"
+            android:textColor="@color/white"/>
+
+        <!-- Кнопка редактирования профиля -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/editProfileButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit Profile"
+            android:backgroundTint="@color/black"
+            android:layout_gravity="center"
+            android:paddingTop="16dp"/>
+
+        <!-- Поля редактирования (изначально скрыты) -->
+        <LinearLayout
+            android:id="@+id/editLayout2"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:paddingTop="16dp">
+
+            <EditText
+                android:id="@+id/editDescriptionEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/white"
+                android:hint="Enter new description" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/chooseAvatarButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Choose Avatar"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:paddingTop="8dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/saveProfileButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Save"
+                android:layout_gravity="center"
+                android:paddingTop="8dp"/>
+        </LinearLayout>
+
+        <!-- Для тренера: список его тренировок -->
+        <TextView
+            android:id="@+id/trainingsLabel2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your Trainings:"
+            android:visibility="gone"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:paddingTop="16dp"/>
+
+        <LinearLayout
+            android:id="@+id/trainingsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:paddingTop="8dp" >
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
