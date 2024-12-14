@@ -1,4 +1,4 @@
-package com.example.gymlove;
+package com.example.gymlove.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +13,9 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.gymlove.R;
+import com.example.gymlove.model.User;
+import com.example.gymlove.adapter.ClientsAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.*;
@@ -36,10 +39,10 @@ public class TrainerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_trainer);
+        setContentView(com.example.gymlove.R.layout.activity_trainer);
 
-        searchEditText = findViewById(R.id.searchEditText);
-        toolbar = findViewById(R.id.toolbar);
+        searchEditText = findViewById(com.example.gymlove.R.id.searchEditText);
+        toolbar = findViewById(com.example.gymlove.R.id.toolbar);
         clientsRecyclerView = findViewById(R.id.clientsRecyclerView);
 
         mDatabase = FirebaseDatabase.getInstance().getReference();

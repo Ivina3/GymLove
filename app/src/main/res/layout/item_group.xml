@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:textSize="18sp"
+    android:textColor="@color/white"
     android:textStyle="bold"
     android:padding="8dp"
-    android:textColor="@android:color/black"
     />

@@ -4,6 +4,7 @@
     android:orientation="vertical"
     android:padding="16dp"
     android:layout_width="match_parent"
+    android:background="#6A0F30"
     android:layout_height="wrap_content">
 
     <TextView
@@ -12,12 +13,14 @@
         android:layout_height="wrap_content"
         android:text="Exercise Name"
         android:textStyle="bold"
+        android:textColor="@color/white"
         android:textSize="20sp"
         android:layout_marginBottom="8dp"/>
 
     <TextView
         android:id="@+id/exerciseDescriptionTextView"
         android:layout_width="wrap_content"
+        android:textColor="@color/white"
         android:layout_height="wrap_content"
         android:text="Exercise description"/>
 
@@ -26,6 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Close"
+        android:backgroundTint="@color/black"
         android:layout_marginTop="16dp"/>
 
 </LinearLayout>

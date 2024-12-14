@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/back3"
     android:padding="16dp">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -13,7 +14,10 @@
         android:contentDescription="Add Plan"
         android:src="@android:drawable/ic_menu_add"
         android:layout_gravity="end"
+        android:background="@color/black"
+        android:backgroundTint="@color/black"
         android:layout_marginBottom="16dp"
+        android:tintMode="@color/black"
         android:layout_marginEnd="16dp"/>
 
     <androidx.recyclerview.widget.RecyclerView

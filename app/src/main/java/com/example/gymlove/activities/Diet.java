@@ -1,4 +1,4 @@
-package com.example.gymlove;
+package com.example.gymlove.activities;
 
 import android.os.Bundle;
 
@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.example.gymlove.R;
 
 public class Diet extends AppCompatActivity {
 

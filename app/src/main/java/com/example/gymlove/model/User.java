@@ -1,4 +1,4 @@
-package com.example.gymlove;
+package com.example.gymlove.model;
 public class User {
     private String id;
     private String name;

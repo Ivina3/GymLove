@@ -1,4 +1,4 @@
-package com.example.gymlove;
+package com.example.gymlove.model;
 
 import java.util.ArrayList;
 import java.util.List;

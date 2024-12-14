@@ -4,6 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/back3"
     android:padding="8dp">
 
     <LinearLayout
@@ -13,13 +14,18 @@
         <EditText
             android:id="@+id/searchEditText"
             android:layout_width="350dp"
+            android:textSize="20dp"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/white"
+            android:backgroundTintMode="@android:color/white"
             android:hint="Search clients by name" />
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="48dp"
             android:layout_height="48dp"
+            android:backgroundTint="@color/white"
             android:background="@drawable/img"
             android:contentDescription="Search button" />
     </LinearLayout>
@@ -27,6 +33,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/clientsRecyclerView"
         android:layout_width="match_parent"
+        android:backgroundTint="#67FFFFFF"
+        android:background="#235B0D0D"
         android:layout_height="match_parent"/>
 
 </LinearLayout>

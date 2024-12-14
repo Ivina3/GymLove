@@ -1,4 +1,4 @@
-package com.example.gymlove;
+package com.example.gymlove.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,9 +12,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.gymlove.R;
 import com.google.firebase.database.*;
-
-import java.io.ByteArrayOutputStream;
 
 public class UserProfileActivity extends AppCompatActivity {
 
@@ -26,11 +25,11 @@ public class UserProfileActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_profile);
+        setContentView(com.example.gymlove.R.layout.activity_user_profile);
 
-        userAvatarImageView = findViewById(R.id.userAvatarImageView);
-        userNameTextView = findViewById(R.id.userNameTextView);
-        userDescriptionTextView = findViewById(R.id.userDescriptionTextView);
+        userAvatarImageView = findViewById(com.example.gymlove.R.id.userAvatarImageView);
+        userNameTextView = findViewById(com.example.gymlove.R.id.userNameTextView);
+        userDescriptionTextView = findViewById(com.example.gymlove.R.id.userDescriptionTextView);
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
 

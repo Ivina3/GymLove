@@ -1,4 +1,4 @@
-package com.example.gymlove;
+package com.example.gymlove.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.gymlove.R;
 import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -25,24 +26,24 @@ public class UserActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user);
+        setContentView(com.example.gymlove.R.layout.activity_user);
 
-        trainerTextView = findViewById(R.id.trainerTextView);
-        homeeCard = findViewById(R.id.HOMEE);
-        logoutButton = findViewById(R.id.logoutButton); // Находим кнопку разлогина
+        trainerTextView = findViewById(com.example.gymlove.R.id.trainerTextView);
+        homeeCard = findViewById(com.example.gymlove.R.id.HOMEE);
+        logoutButton = findViewById(com.example.gymlove.R.id.logoutButton); // Находим кнопку разлогина
 
-        CardView dietCard = findViewById(R.id.dietnutrition);
+        CardView dietCard = findViewById(com.example.gymlove.R.id.dietnutrition);
         dietCard.setOnClickListener(v -> {
             startActivity(new Intent(UserActivity.this, Diet.class));
         });
 
 
-        CardView aboutusCard = findViewById(R.id.aboutus);
+        CardView aboutusCard = findViewById(com.example.gymlove.R.id.aboutus);
         aboutusCard.setOnClickListener(v -> {
             startActivity(new Intent(UserActivity.this, MyExercisesActivity.class));
         });
 
-        CardView workoutCard = findViewById(R.id.workout);
+        CardView workoutCard = findViewById(com.example.gymlove.R.id.workout);
         workoutCard.setOnClickListener(v -> {
             startActivity(new Intent(UserActivity.this, WorkoutActivity.class));
         });

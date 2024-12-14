@@ -5,13 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingStart="48dp"
-    android:padding="8dp">
+    android:padding="8dp"
+    android:background="#BF000000">
 
     <TextView
         android:id="@+id/exerciseName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Exercise"
+        android:textColor="@color/white"
         android:textSize="14sp"
         android:textStyle="bold"/>
 
@@ -19,6 +21,7 @@
         android:id="@+id/setsWeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
         android:text="Sets: 0 Weight: 0kg"
         android:textSize="14sp"/>
 </LinearLayout>

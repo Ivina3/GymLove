@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
+    android:background="@drawable/back3"
     android:fitsSystemWindows="true">
 
     <LinearLayout
@@ -18,6 +18,7 @@
             android:layout_height="wrap_content"
             android:text="Trainer Name"
             android:textSize="24sp"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:textAlignment="center"
             android:paddingTop="16dp" />
@@ -27,6 +28,7 @@
             android:id="@+id/trainerDescriptionTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="#D8FFFFFF"
             android:text="Trainer description"
             android:textAlignment="center"
             android:paddingTop="8dp" />
@@ -37,6 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Subscribe"
+            android:backgroundTint="@color/black"
             android:layout_gravity="center"
             android:layout_marginTop="16dp"/>
 
@@ -45,6 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Trainings:"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="18sp"
             android:paddingTop="24dp"
@@ -55,9 +59,87 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <!-- Здесь динамически добавляются TextView-тренировки из кода -->
-        </LinearLayout>
 
+            <!-- Тренировка 1 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#6D800A30"
+                    android:gravity="center"
+                    android:text="Training №1 FOR ARMS"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:padding="10dp" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/ic_menu_add"
+                    android:backgroundTint="#00FFFFFF"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="8dp"/>
+            </RelativeLayout>
+
+            <!-- Тренировка 2 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#6D800A30"
+                    android:gravity="center"
+                    android:text="Training №2 FOR LEGS"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:padding="10dp" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/ic_menu_add"
+                    android:backgroundTint="#00FFFFFF"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="8dp"/>
+            </RelativeLayout>
+
+            <!-- Тренировка 3 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#6D800A30"
+                    android:gravity="center"
+                    android:text="Training №3 FULL BODY"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:padding="10dp" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/ic_menu_add"
+                    android:backgroundTint="#00FFFFFF"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="8dp"/>
+            </RelativeLayout>
+
+            <!-- Здесь динамически добавляются TextView-тренировки из кода -->
+
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>
-

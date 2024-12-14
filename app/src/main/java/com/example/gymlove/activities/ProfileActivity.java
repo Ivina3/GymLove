@@ -1,4 +1,4 @@
-package com.example.gymlove;
+package com.example.gymlove.activities;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,6 +19,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.gymlove.R;
+import com.example.gymlove.model.ExerciseItem;
 import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -59,22 +61,22 @@ public class ProfileActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(com.example.gymlove.R.layout.activity_profile);
 
 
-        avatarImageView = findViewById(R.id.avatarImageView2);
-        userNameTextView = findViewById(R.id.userNameTextView2);
-        userDescriptionTextView = findViewById(R.id.userDescriptionTextView2);
-        trainingsLabel = findViewById(R.id.trainingsLabel2);
-        trainingsContainer = findViewById(R.id.trainingsContainer);
+        avatarImageView = findViewById(com.example.gymlove.R.id.avatarImageView2);
+        userNameTextView = findViewById(com.example.gymlove.R.id.userNameTextView2);
+        userDescriptionTextView = findViewById(com.example.gymlove.R.id.userDescriptionTextView2);
+        trainingsLabel = findViewById(com.example.gymlove.R.id.trainingsLabel2);
+        trainingsContainer = findViewById(com.example.gymlove.R.id.trainingsContainer);
 
-        editProfileButton = findViewById(R.id.editProfileButton2);
-        editLayout = findViewById(R.id.editLayout2);
-        chooseAvatarButton = findViewById(R.id.chooseAvatarButton2);
-        saveProfileButton = findViewById(R.id.saveProfileButton);
+        editProfileButton = findViewById(com.example.gymlove.R.id.editProfileButton2);
+        editLayout = findViewById(com.example.gymlove.R.id.editLayout2);
+        chooseAvatarButton = findViewById(com.example.gymlove.R.id.chooseAvatarButton2);
+        saveProfileButton = findViewById(com.example.gymlove.R.id.saveProfileButton);
 //        manageTrainingsButton = findViewById(R.id.manageTrainingsButton);
 
-        editDescriptionEditText = findViewById(R.id.editDescriptionEditText);
+        editDescriptionEditText = findViewById(com.example.gymlove.R.id.editDescriptionEditText);
 
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
@@ -107,10 +109,10 @@ public class ProfileActivity extends AppCompatActivity {
                                     avatarImageView.setImageBitmap(avatarBitmap);
                                 } else {
                                     Log.e(TAG, "Failed to decode avatar bitmap.");
-                                    avatarImageView.setImageResource(R.drawable.profile);
+                                    avatarImageView.setImageResource(com.example.gymlove.R.drawable.profile);
                                 }
                             } else {
-                                avatarImageView.setImageResource(R.drawable.profile);
+                                avatarImageView.setImageResource(com.example.gymlove.R.drawable.profile);
                             }
 
                             if (trainerFlag != null && trainerFlag) {
@@ -254,17 +256,17 @@ public class ProfileActivity extends AppCompatActivity {
                                             }
 
                                             // Создаём представление тренировки
-                                            View trainingView = LayoutInflater.from(ProfileActivity.this).inflate(R.layout.item_training_profile, trainingsContainer, false);
-                                            TextView trainingNameTextView = trainingView.findViewById(R.id.trainingNameTextView);
-                                            LinearLayout exerciseListContainer = trainingView.findViewById(R.id.exerciseListContainer);
-                                            MaterialButton deleteTrainingButton = trainingView.findViewById(R.id.deleteTrainingButton);
+                                            View trainingView = LayoutInflater.from(ProfileActivity.this).inflate(com.example.gymlove.R.layout.item_training_profile, trainingsContainer, false);
+                                            TextView trainingNameTextView = trainingView.findViewById(com.example.gymlove.R.id.trainingNameTextView);
+                                            LinearLayout exerciseListContainer = trainingView.findViewById(com.example.gymlove.R.id.exerciseListContainer);
+                                            MaterialButton deleteTrainingButton = trainingView.findViewById(com.example.gymlove.R.id.deleteTrainingButton);
 
                                             trainingNameTextView.setText(planName);
 
                                             // Добавляем упражнения
                                             for (ExerciseItem ex : exercises) {
-                                                View exView = LayoutInflater.from(ProfileActivity.this).inflate(R.layout.item_exercise_in_profile_training, exerciseListContainer, false);
-                                                TextView exNameTextView = exView.findViewById(R.id.exExerciseName);
+                                                View exView = LayoutInflater.from(ProfileActivity.this).inflate(com.example.gymlove.R.layout.item_exercise_in_profile_training, exerciseListContainer, false);
+                                                TextView exNameTextView = exView.findViewById(com.example.gymlove.R.id.exExerciseName);
                                                 TextView exSetsWeightTextView = exView.findViewById(R.id.exSetsWeight);
                                                 exNameTextView.setText(ex.getName());
                                                 exSetsWeightTextView.setText("Sets: " + ex.getSets() + "  Weight: " + ex.getWeight() + "kg");

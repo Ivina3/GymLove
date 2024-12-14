@@ -1,4 +1,4 @@
-package com.example.gymlove;
+package com.example.gymlove.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +7,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.gymlove.R;
+import com.example.gymlove.model.User;
 
 import java.util.List;
 

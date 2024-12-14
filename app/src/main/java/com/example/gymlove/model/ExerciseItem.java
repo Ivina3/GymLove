@@ -1,4 +1,4 @@
-package com.example.gymlove;
+package com.example.gymlove.model;
 
 public class ExerciseItem {
     private String name;

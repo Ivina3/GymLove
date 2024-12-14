@@ -1,7 +1,6 @@
-package com.example.gymlove;
+package com.example.gymlove.activities;
 
 import android.annotation.SuppressLint;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -10,6 +9,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.gymlove.R;
 import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -31,12 +31,12 @@ public class TrainerProfileActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_trainer_profile);
+        setContentView(com.example.gymlove.R.layout.activity_trainer_profile);
 
-        trainerNameTextView = findViewById(R.id.trainerNameTextView);
-        trainerDescriptionTextView = findViewById(R.id.trainerDescriptionTextView);
-        trainingsContainer = findViewById(R.id.trainingsContainer);
-        subscribeButton = findViewById(R.id.subscribeButton);
+        trainerNameTextView = findViewById(com.example.gymlove.R.id.trainerNameTextView);
+        trainerDescriptionTextView = findViewById(com.example.gymlove.R.id.trainerDescriptionTextView);
+        trainingsContainer = findViewById(com.example.gymlove.R.id.trainingsContainer);
+        subscribeButton = findViewById(com.example.gymlove.R.id.subscribeButton);
 
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -137,7 +137,7 @@ public class TrainerProfileActivity extends AppCompatActivity {
         if (isSubscribed) {
             // Подписан: кнопка "Unsubscribe"
             subscribeButton.setText("Unsubscribe");
-            subscribeButton.setBackgroundTintList(getResources().getColorStateList(R.color.red, null));
+            subscribeButton.setBackgroundTintList(getResources().getColorStateList(com.example.gymlove.R.color.red, null));
         } else {
             // Не подписан: кнопка "Subscribe"
             subscribeButton.setText("Subscribe");

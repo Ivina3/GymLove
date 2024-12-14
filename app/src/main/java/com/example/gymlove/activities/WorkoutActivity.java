@@ -1,4 +1,4 @@
-package com.example.gymlove;
+package com.example.gymlove.activities;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +10,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.gymlove.R;
+import com.example.gymlove.adapter.WorkoutAdapter;
+import com.example.gymlove.model.ExerciseItem;
 
 import java.util.ArrayList;
 import java.util.List;

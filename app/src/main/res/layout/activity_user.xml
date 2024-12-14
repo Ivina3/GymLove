@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/main2"
     android:background="@drawable/back3"
-    tools:context=".UserActivity">
+    tools:context=".activities.UserActivity">
 
     <ImageButton
         android:id="@+id/profileButton"

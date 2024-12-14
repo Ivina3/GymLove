@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="#DE4D072C">
 
     <LinearLayout
         android:orientation="vertical"
@@ -14,7 +16,6 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <!-- Сюда будут программно добавляться view из item_sets_weight -->
         </LinearLayout>
 
         <LinearLayout
@@ -28,6 +29,7 @@
                 android:id="@+id/saveButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
                 android:text="Save"/>
 
             <Button
@@ -35,8 +37,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Cancel"
+                android:backgroundTint="@color/black"
                 android:layout_marginStart="8dp"/>
         </LinearLayout>
-
     </LinearLayout>
 </ScrollView>

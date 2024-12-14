@@ -1,4 +1,4 @@
-package com.example.gymlove;
+package com.example.gymlove.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +9,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.gymlove.model.ExerciseItem;
+import com.example.gymlove.model.ExercisePlan;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,6 +20,7 @@ public class MyExercisesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     private static final int TYPE_PLAN = 0;
     private static final int TYPE_EXERCISE = 1;
 
+    private List<ExercisePlan> planList;
     private List<Object> displayList = new ArrayList<>();
     private OnPlanActionListener listener;
 
@@ -24,22 +28,17 @@ public class MyExercisesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         void onDeletePlan(ExercisePlan plan);
     }
 
-    private List<ExercisePlan> planList;
-
     public MyExercisesAdapter(List<ExercisePlan> planList, OnPlanActionListener listener) {
         this.planList = planList;
-        buildDisplayList();
         this.listener = listener;
+        buildDisplayList();
     }
 
     private void buildDisplayList() {
         displayList.clear();
-        // Для каждого плана добавляем сам план
-        // Если expanded = true, добавляем под ним упражнения
         for (ExercisePlan plan : planList) {
-            displayList.add(plan); // план
+            displayList.add(plan);
             if (plan.isExpanded()) {
-                // Добавляем упражнения
                 displayList.addAll(plan.getExercises());
             }
         }
@@ -65,10 +64,10 @@ public class MyExercisesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         if (viewType == TYPE_PLAN) {
-            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_plan, parent, false);
+            View v = LayoutInflater.from(parent.getContext()).inflate(com.example.gymlove.R.layout.item_plan, parent, false);
             return new PlanViewHolder(v);
         } else {
-            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_exercise_in_plan, parent, false);
+            View v = LayoutInflater.from(parent.getContext()).inflate(com.example.gymlove.R.layout.item_exercise_in_plan, parent, false);
             return new ExerciseViewHolder(v);
         }
     }
@@ -76,7 +75,7 @@ public class MyExercisesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         Object obj = displayList.get(position);
-        if (obj instanceof ExercisePlan) {
+        if (holder instanceof PlanViewHolder) {
             ExercisePlan plan = (ExercisePlan) obj;
             PlanViewHolder pv = (PlanViewHolder) holder;
             pv.nameTextView.setText(plan.getName());
@@ -88,7 +87,6 @@ public class MyExercisesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
             }
 
             pv.itemView.setOnClickListener(v -> {
-                // Toggle expanded
                 plan.setExpanded(!plan.isExpanded());
                 buildDisplayList();
                 notifyDataSetChanged();
@@ -99,8 +97,7 @@ public class MyExercisesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
                     listener.onDeletePlan(plan);
                 }
             });
-
-        } else if (obj instanceof ExerciseItem) {
+        } else {
             ExerciseItem exercise = (ExerciseItem) obj;
             ExerciseViewHolder ev = (ExerciseViewHolder) holder;
             ev.exerciseName.setText(exercise.getName());
@@ -115,12 +112,12 @@ public class MyExercisesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     class PlanViewHolder extends RecyclerView.ViewHolder {
         TextView nameTextView, fromTrainerTextView;
-        View deleteButton;
+        ImageView deleteButton;
         PlanViewHolder(@NonNull View itemView) {
             super(itemView);
-            nameTextView = itemView.findViewById(R.id.planNameTextView);
-            fromTrainerTextView = itemView.findViewById(R.id.fromTrainerTextView);
-            deleteButton = itemView.findViewById(R.id.deleteButton);
+            nameTextView = itemView.findViewById(com.example.gymlove.R.id.planNameTextView);
+            fromTrainerTextView = itemView.findViewById(com.example.gymlove.R.id.fromTrainerTextView);
+            deleteButton = itemView.findViewById(com.example.gymlove.R.id.deleteButton);
         }
     }
 
@@ -128,8 +125,8 @@ public class MyExercisesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         TextView exerciseName, setsWeight;
         ExerciseViewHolder(@NonNull View itemView) {
             super(itemView);
-            exerciseName = itemView.findViewById(R.id.exerciseName);
-            setsWeight = itemView.findViewById(R.id.setsWeight);
+            exerciseName = itemView.findViewById(com.example.gymlove.R.id.exerciseName);
+            setsWeight = itemView.findViewById(com.example.gymlove.R.id.setsWeight);
         }
     }
 }

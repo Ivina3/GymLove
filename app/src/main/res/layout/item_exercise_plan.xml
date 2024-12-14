@@ -17,6 +17,7 @@
             android:id="@+id/planNameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold"/>
 
@@ -35,5 +36,6 @@
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:src="@android:drawable/ic_menu_delete"
+        android:backgroundTint="@color/white"
         android:contentDescription="Delete Plan"/>
 </LinearLayout>

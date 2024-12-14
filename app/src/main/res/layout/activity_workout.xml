@@ -4,6 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/back3"
     android:padding="16dp">
 
     <TextView
@@ -12,6 +13,7 @@
         android:layout_height="wrap_content"
         android:text="Exercises by Muscle Group"
         android:textSize="20sp"
+        android:textColor="@color/white"
         android:textStyle="bold"
         android:layout_gravity="center"/>
 
@@ -19,6 +21,8 @@
         android:id="@+id/workoutRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#1EFFFFFF"
+        android:textColor="@color/white"
         android:layout_marginTop="16dp"/>
 
 </LinearLayout>

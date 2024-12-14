@@ -1,4 +1,4 @@
-package com.example.gymlove;
+package com.example.gymlove.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -15,6 +15,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.gymlove.adapter.MyExercisesAdapter;
+import com.example.gymlove.model.ExerciseItem;
+import com.example.gymlove.model.ExercisePlan;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -43,10 +46,10 @@ public class MyExercisesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_exercises);
+        setContentView(com.example.gymlove.R.layout.activity_my_exercises);
 
-        myExercisesRecyclerView = findViewById(R.id.myExercisesRecyclerView);
-        addPlanFab = findViewById(R.id.addPlanFab);
+        myExercisesRecyclerView = findViewById(com.example.gymlove.R.id.myExercisesRecyclerView);
+        addPlanFab = findViewById(com.example.gymlove.R.id.addPlanFab);
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
         currentUser = FirebaseAuth.getInstance().getCurrentUser();
@@ -143,11 +146,11 @@ public class MyExercisesActivity extends AppCompatActivity {
 
     private void showAddPlanDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        View dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_add_plan, null);
-        planNameEditText = dialogView.findViewById(R.id.planNameEditText);
-        View saveButton = dialogView.findViewById(R.id.saveButton);
-        View cancelButton = dialogView.findViewById(R.id.cancelButton);
-        View chooseExercisesButton = dialogView.findViewById(R.id.chooseExercisesButton);
+        View dialogView = LayoutInflater.from(this).inflate(com.example.gymlove.R.layout.dialog_add_plan, null);
+        planNameEditText = dialogView.findViewById(com.example.gymlove.R.id.planNameEditText);
+        View saveButton = dialogView.findViewById(com.example.gymlove.R.id.saveButton);
+        View cancelButton = dialogView.findViewById(com.example.gymlove.R.id.cancelButton);
+        View chooseExercisesButton = dialogView.findViewById(com.example.gymlove.R.id.chooseExercisesButton);
 
         builder.setView(dialogView);
         AlertDialog dialog = builder.create();
@@ -208,23 +211,23 @@ public class MyExercisesActivity extends AppCompatActivity {
 
     private void showSetsWeightsDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        View dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_sets_weights, null);
+        View dialogView = LayoutInflater.from(this).inflate(com.example.gymlove.R.layout.dialog_sets_weights, null);
 
-        LinearLayout exercisesContainer = dialogView.findViewById(R.id.exercisesContainer);
+        LinearLayout exercisesContainer = dialogView.findViewById(com.example.gymlove.R.id.exercisesContainer);
         List<View> exerciseViews = new ArrayList<>();
         for (String exercise : selectedExercises) {
-            View row = LayoutInflater.from(this).inflate(R.layout.item_sets_weight, exercisesContainer, false);
-            TextView exerciseNameTextView = row.findViewById(R.id.exerciseNameTextView);
-            EditText setsEditText = row.findViewById(R.id.setsEditText);
-            EditText weightEditText = row.findViewById(R.id.weightEditText);
+            View row = LayoutInflater.from(this).inflate(com.example.gymlove.R.layout.item_sets_weight, exercisesContainer, false);
+            TextView exerciseNameTextView = row.findViewById(com.example.gymlove.R.id.exerciseNameTextView);
+            EditText setsEditText = row.findViewById(com.example.gymlove.R.id.setsEditText);
+            EditText weightEditText = row.findViewById(com.example.gymlove.R.id.weightEditText);
 
             exerciseNameTextView.setText(exercise);
             exercisesContainer.addView(row);
             exerciseViews.add(row);
         }
 
-        View saveButton = dialogView.findViewById(R.id.saveButton);
-        View cancelButton = dialogView.findViewById(R.id.cancelButton);
+        View saveButton = dialogView.findViewById(com.example.gymlove.R.id.saveButton);
+        View cancelButton = dialogView.findViewById(com.example.gymlove.R.id.cancelButton);
 
         builder.setView(dialogView);
         AlertDialog dialog = builder.create();
@@ -232,9 +235,9 @@ public class MyExercisesActivity extends AppCompatActivity {
         saveButton.setOnClickListener(v -> {
             Map<String,Object> exercisesMap = new HashMap<>();
             for (View row : exerciseViews) {
-                TextView exerciseNameTextView = row.findViewById(R.id.exerciseNameTextView);
-                EditText setsEditText = row.findViewById(R.id.setsEditText);
-                EditText weightEditText = row.findViewById(R.id.weightEditText);
+                TextView exerciseNameTextView = row.findViewById(com.example.gymlove.R.id.exerciseNameTextView);
+                EditText setsEditText = row.findViewById(com.example.gymlove.R.id.setsEditText);
+                EditText weightEditText = row.findViewById(com.example.gymlove.R.id.weightEditText);
 
                 String exName = exerciseNameTextView.getText().toString();
                 int sets = 0;

@@ -58,6 +58,7 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
             android:visibility="gone"
             android:paddingTop="16dp">
 
@@ -65,14 +66,17 @@
                 android:id="@+id/editDescriptionEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColorHint="@color/white"
-                android:hint="Enter new description" />
+                android:hint="Enter new description"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/white"
+                android:textColorHint="@color/white"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/chooseAvatarButton2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Choose Avatar"
+                android:backgroundTint="@color/black"
                 android:textColor="@color/white"
                 android:layout_gravity="center"
                 android:paddingTop="8dp"/>
@@ -82,6 +86,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Save"
+                android:backgroundTint="@color/black"
+                android:textColor="@color/white"
                 android:layout_gravity="center"
                 android:paddingTop="8dp"/>
         </LinearLayout>
